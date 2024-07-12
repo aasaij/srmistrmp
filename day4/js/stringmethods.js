@@ -1,0 +1,18 @@
+let x = "Koushik Raghav";
+console.log(x[0]);
+x = "L" + x.slice(1, x.length);
+console.log(x);
+console.log(x.indexOf("rag"));
+console.log(x.lastIndexOf("a"));
+console.log(x.includes("e"));
+let name = "         This is    Testing        ";
+console.log(name.trim() + "123");
+name = "Testeng";
+console.log(name.padStart(30, "*"));
+console.log(name.repeat(10));
+console.log(name.replace("e", "a"));
+console.log(name.replaceAll("e", "a"));
+let text = "This is testing";
+console.log(text.split("i"));
+console.log(text.charAt(-2));
+console.log(text.at(-2));
