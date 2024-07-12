@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container bg-light">
+      <form action="" name="frmCalc">
+        <label for="txtN1" class="form-label">Number 1</label>
+        <input type="number" class="form-control" id="txtN1" required />
+        <label for="txtN2" class="form-label">Number 2</label>
+        <input type="number" class="form-control" id="txtN2" required />
+        <div class="form-check-group">
+          <input
+            type="radio"
+            name="opr"
+            id="plus"
+            value="+"
+            class="form-check-input"
+            checked
+          />
+          <label for="plus" class="form-check-label">Addition</label>
+        </div>
+        <div class="form-check-group">
+          <input
+            type="radio"
+            name="opr"
+            id="minus"
+            value="-"
+            class="form-check-input"
+          />
+          <label for="minus" class="form-check-label">Subtraction</label>
+        </div>
+        <div class="form-check-group">
+          <input
+            type="radio"
+            name="opr"
+            id="multiply"
+            value="x"
+            class="form-check-input"
+          />
+          <label for="multiply" class="form-check-label">Multiplication</label>
+        </div>
+        <div class="form-check-group">
+          <input
+            type="radio"
+            name="opr"
+            id="divide"
+            value="/"
+            class="form-check-input"
+          />
+          <label for="divide" class="form-check-label">Division</label>
+        </div>
+        <div class="form-check-group">
+          <input
+            type="radio"
+            name="opr"
+            id="remainder"
+            value="%"
+            class="form-check-input"
+          />
+          <label for="remainder" class="form-check-label">Remainder</label>
+        </div>
+        <label for="" class="form-label">Result</label>
+        <input type="text" class="form-control" id="txtResult" readonly />
+        <button class="btn btn-primary" type="button" onclick="calculate()">
+          Calculate
+        </button>
+        <button class="btn btn-danger" type="reset">Clear</button>
+      </form>
+    </div>
+    <script>
+      function greet() {
+        alert("Good afternoon Engineers!");
+      }
+      function calculate() {
+        let x = Number(document.getElementById("txtN1").value);
+        let y = Number(document.getElementById("txtN2").value);
+        let result;
+        let sign = document.frmCalc.opr.value;
+        if (sign === "+") result = x + y;
+        else if (sign === "-") result = x - y;
+        else if (sign === "x") result = x * y;
+        else if (sign === "/") result = x / y;
+        else if (sign === "%") result = x % y;
+        // if (result !== undefined)
+        document.getElementById("txtResult").value = result;
+        // else
+        //   document.getElementById("txtResult").value = "Choose operation type";
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
